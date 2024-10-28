@@ -1,20 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import path from 'path';
+import { SelecPartidoComponent } from './selec-partido/selec-partido.component';
 import { CronologiaComponent } from './cronologia/cronologia.component';
 import { TrEstadisticaComponent } from './tr-estadistica/tr-estadistica.component';
 
 const routes: Routes = [{
   path: '',
-  redirectTo: 'app-cronologia',
-  pathMatch: 'full'
-},
-{
-  path: 'app-cronologia',
+  component: SelecPartidoComponent
+},{
+  path: 'cronologia',
   component: CronologiaComponent
 },
 {
-  path: 'app-tr-estadistica',
+  path: 'estadistica',
   component: TrEstadisticaComponent
 }
 ];
