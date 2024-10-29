@@ -28,7 +28,9 @@ export class CronologiaComponent {
         console.error('Componente dsconocido');
         return;
     }
-    this.dialog.open(component);
+    this.dialog.open(component, {
+      width: '300px', // Ajusta el tamaño a tus necesidades
+    });
   }
 }
 
