@@ -1,12 +1,13 @@
 <mat-card class="card-partido">
     <mat-card-content>
-        <div class="estado">
+        <div class="partido-info">
             <p>En curso</p>
+            <p>Primer Tiempo</p>
         </div>
         <div class="partido-info">
             <div class="equipo equipo-izquierda">
                 <img
-                    src="/frontend/frontend/src/assets/equipo1.png"
+                    src="icons/equipo1.png"
                     alt="Logo equipo izquierdo"
                     class="logo-equipo"
                 />
@@ -19,7 +20,7 @@
             </div>
             <div class="equipo equipo-derecha">
                 <img
-                    src="assets/equipo1.png"
+                    src="icons/equipo2.png"
                     alt="Logo equipo derecho"
                     class="logo-equipo"
                 />
@@ -28,7 +29,8 @@
         </div>
         <div class="detalles-partido">
             <p>Campeonato CIS</p>
-            <p>75:30</p>
+            <p>{{ time }}</p>
+            <!-- Aquí se muestra el tiempo dinámico -->
         </div>
     </mat-card-content>
     <mat-tab-group>
@@ -41,16 +43,22 @@
                     <div>
                         <p style="color: rgb(4, 207, 21)">Entra</p>
                         <div>
-                            <p>Pablo Lopez <br> Quinto -Defensor#23</p>
+                            <p>
+                                Pablo Lopez <br />
+                                Quinto -Defensor#23
+                            </p>
                         </div>
                     </div>
                     <div>
                         <p style="color: crimson">Sale</p>
-                        <p>Leonardo Peralta <br> Quinto - Mediocampista #6</p>
+                        <p>
+                            Leonardo Peralta <br />
+                            Quinto - Mediocampista #6
+                        </p>
                     </div>
                 </mat-card-content>
             </mat-card>
-            
+
             <mat-card class="card-partido">
                 <mat-card-content>
                     <div class="tarjeta">
@@ -91,7 +99,7 @@
                         </div>
                     </div>
                 </mat-card-content>
-            </mat-card>        
+            </mat-card>
         </mat-tab>
         <mat-tab label="Estadísticas">
             <app-tr-estadistica></app-tr-estadistica>
