@@ -25,9 +25,16 @@ export class ArbitroComponent {
     this.router.navigate(['/tiempo-real']); 
   }
 
-  displayedColumns: string[] = ['equipos', 'marcador', 'tiempo', 'estado'];
-  dataSource = [
+  columnasTabla1: string[] = ['equipos', 'marcador', 'tiempo', 'estado'];
+  dataSource1 = [
     { equipos: 'Quinto - Sexto', marcador: '0 - 1', tiempo: 1, estado: 'En juego' },
     { equipos: 'Equipo B', marcador: '0 - 0', tiempo: 2, estado: 'Suspendido' },
   ];
+
+  columnasTabla2: string[] = ['equipo', 'tiempo', 'entra', 'sale'];
+  dataSource2 = [
+    { equipo: 'Quinto', tiempo: '11:40', entra: 'Sergio Jumbo - 11', sale: 'Abel Mora - 10' },
+    { equipo: 'Sexto', tiempo: '32:00', entra: 'Cristiano Ronaldo - 8', sale: 'Messi - 4' },
+  ];
+
 }
