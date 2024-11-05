@@ -11,6 +11,7 @@ import { MatDialog, MatDialogContent, MatDialogTitle } from '@angular/material/d
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
+
 @Component({
   selector: 'app-arbitro',
   standalone: true,
@@ -19,16 +20,31 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './arbitro.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
+
+
 export class ArbitroComponent {
   constructor(private router: Router) { }
   navigateToSelec() {
     this.router.navigate(['/tiempo-real']); 
   }
 
+
+
+  data: string[] = ['value', 'viewValue']
+  equipos = [
+    {value: 'quinto', viewValue: 'Quinto'},
+    {value: 'sexto', viewValue: 'Sexto'},
+  ]
+  jugadores = [
+    {value: 'santiago', viewValue: 'Santiago'},
+    {value: 'cristian', viewValue: 'Cristian'},
+    {value: 'wilman', viewValue: 'Wilman'},
+  ];
+
   columnasTabla1: string[] = ['equipos', 'marcador', 'tiempo', 'estado'];
   dataSource1 = [
-    { equipos: 'Quinto - Sexto', marcador: '0 - 1', tiempo: 1, estado: 'En juego' },
-    { equipos: 'Equipo B', marcador: '0 - 0', tiempo: 2, estado: 'Suspendido' },
+    { equipos: 'Quinto - Sexto', marcador: '0 - 1', tiempo: 1, estado: 'Msessi' },
+    { equipos: 'Equipo B', marcador: '0 - 0', tiempo: 2, estado: 'Sergio' },
   ];
 
   columnasTabla2: string[] = ['equipo', 'tiempo', 'entra', 'sale'];
