@@ -1,4 +1,5 @@
-import { Component, inject } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -8,21 +9,28 @@ import { MatIconModule } from '@angular/material/icon';
 import { CronologiaComponent } from '../cronologia/cronologia.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialog } from '@angular/material/dialog';
-
+import { CommonModule } from '@angular/common';
+import {MatDividerModule} from '@angular/material/divider';
 
 @Component({
   selector: 'app-selec-partido',
   standalone: true,
-  imports: [MatFormFieldModule, MatSelectModule, FormsModule, ReactiveFormsModule, MatButtonModule, MatCardModule, MatIconModule, MatTableModule],
+  imports: [CommonModule, MatDividerModule, MatFormFieldModule, MatSelectModule, FormsModule, ReactiveFormsModule, MatButtonModule, MatCardModule, MatIconModule, MatTableModule],
   templateUrl: './selec-partido.component.html',
   styleUrl: './selec-partido.component.scss'
 })
 export class SelecPartidoComponent {
-  dialog = inject(MatDialog);
-  openCronologiaComponent() {
-    this.dialog.open(CronologiaComponent, {
-      height: '700px', // Ajusta el tamaño a tus necesidades
-    });
+  currentDate = new Date();
+  esArbitro = true;
+
+  constructor(private router: Router) { 
+  }
+  navigateToCronologia() {
+    this.router.navigate(['/tiempo-real/cronologia']); 
+  }
+
+  navigateToArbitro() {
+    this.router.navigate(['/tiempo-real/arbitro']); 
   }
   
 

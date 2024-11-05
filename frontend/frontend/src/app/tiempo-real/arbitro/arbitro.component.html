@@ -1,0 +1,132 @@
+<button mat-fab (click)="navigateToSelec()">
+  <mat-icon>arrow_back_ios_new</mat-icon>
+</button>
+<mat-grid-list cols="1" rowHeight="50%">
+  <div>
+    <p>En curso</p>
+  </div>
+  <div class="partido-info">
+    <div class="equipo equipo-izquierda">
+      <img src="/frontend/frontend/src/assets/equipo1.png" alt="Logo equipo izquierdo" class="logo-equipo" />
+      <p>Quinto</p>
+    </div>
+    <div class="resultado">
+      <span class="goles">1</span>
+      <span>-</span>
+      <span class="goles">0</span>
+    </div>
+    <div class="equipo equipo-derecha">
+      <img src="assets/equipo1.png" alt="Logo equipo derecho" class="logo-equipo" />
+      <p>Sexto</p>
+    </div>
+  </div>
+  <div class="detalles-partido">
+    <p>Campeonato CIS</p>
+    <p>75:30</p>
+  </div>
+</mat-grid-list>
+<mat-tab-group>
+  <mat-tab label="Puntaje">
+    <mat-grid-list cols="2" rowHeight="2:1">
+      <mat-grid-tile>
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+          <ng-container matColumnDef="equipos">
+            <th mat-header-cell *matHeaderCellDef>Equipos</th>
+            <td mat-cell *matCellDef="let element"> {{element.equipos}} </td>
+          </ng-container>
+          <ng-container matColumnDef="marcador">
+            <th mat-header-cell *matHeaderCellDef>Marcador</th>
+            <td mat-cell *matCellDef="let element"> {{element.marcador}} </td>
+          </ng-container>
+          <ng-container matColumnDef="tiempo">
+            <th mat-header-cell *matHeaderCellDef>Tiempo</th>
+            <td mat-cell *matCellDef="let element"> {{element.tiempo}} </td>
+          </ng-container>
+          <ng-container matColumnDef="estado">
+            <th mat-header-cell *matHeaderCellDef>Estado</th>
+            <td mat-cell *matCellDef="let element"> {{element.estado}} </td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </mat-grid-tile>
+      <mat-grid-tile>
+            <mat-form-field>
+              <mat-label>Equipo</mat-label>
+              <mat-select>
+                <mat-option value="one">Quinto</mat-option>
+                <mat-option value="two">Sexto</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Jugador</mat-label>
+              <mat-select>
+                <mat-option value="one">X Jugador 1</mat-option>
+                <mat-option value="two">X Jugador 2</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <div style="text-align: right; margin-top: 20px;">
+              <button mat-raised-button color="primary">Registrar</button>
+            </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-tab>
+  <mat-tab label="Cambios">
+    <mat-grid-list cols="2" rowHeight="2:1">
+      <mat-grid-tile>
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+          <ng-container matColumnDef="equipos">
+            <th mat-header-cell *matHeaderCellDef>Equipos</th>
+            <td mat-cell *matCellDef="let element"> {{element.equipos}} </td>
+          </ng-container>
+          <ng-container matColumnDef="marcador">
+            <th mat-header-cell *matHeaderCellDef>Marcador</th>
+            <td mat-cell *matCellDef="let element"> {{element.marcador}} </td>
+          </ng-container>
+          <ng-container matColumnDef="tiempo">
+            <th mat-header-cell *matHeaderCellDef>Tiempo</th>
+            <td mat-cell *matCellDef="let element"> {{element.tiempo}} </td>
+          </ng-container>
+          <ng-container matColumnDef="estado">
+            <th mat-header-cell *matHeaderCellDef>Estado</th>
+            <td mat-cell *matCellDef="let element"> {{element.estado}} </td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </mat-grid-tile>
+      <mat-grid-tile>
+            <mat-form-field>
+              <mat-label>Equipo</mat-label>
+              <mat-select>
+                <mat-option value="one">Quinto</mat-option>
+                <mat-option value="two">Sexto</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Jugador</mat-label>
+              <mat-select>
+                <mat-option value="one">X Jugador 1</mat-option>
+                <mat-option value="two">X Jugador 2</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Jugador</mat-label>
+              <mat-select>
+                <mat-option value="one">X Jugador 1</mat-option>
+                <mat-option value="two">X Jugador 2</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <div style="text-align: right; margin-top: 20px;">
+              <button mat-raised-button color="primary">Registrar</button>
+            </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-tab>
+  <mat-tab label="Faltas">
+    <mat-grid-list cols="2" rowHeight="2:1">
+      <mat-grid-tile>1</mat-grid-tile>
+      <mat-grid-tile>2</mat-grid-tile>
+    </mat-grid-list>
+  </mat-tab>
+</mat-tab-group>
