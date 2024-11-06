@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { SelecPartidoComponent } from './selec-partido/selec-partido.component';
 import { CronologiaComponent } from './cronologia/cronologia.component';
 import { TrEstadisticaComponent } from './tr-estadistica/tr-estadistica.component';
+import { ArbitroComponent } from './arbitro/arbitro.component';
 
 const routes: Routes = [{
   path: '',
@@ -14,6 +15,10 @@ const routes: Routes = [{
 {
   path: 'estadistica',
   component: TrEstadisticaComponent
+},
+{
+  path: 'arbitro',
+  component: ArbitroComponent
 }
 ];
 
